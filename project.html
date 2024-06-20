@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>I am me!</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		/* Add this style for side-by-side layout */
+		.main-content {
+			display: flex;
+			align-items: center;
+			justify-content: center; /* Center the content horizontally */
+		}
+
+		/* Adjust spacing if needed */
+		img {
+			margin-right: 20px;
+		}
+
+		/* Add style for the menu bar */
+		.menu-bar {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-size: cover;
+			height: 50px; /* Adjust the height as needed */
+			z-index: 1; 
+		}
+
+		header {
+			position: relative; 
+		}
+
+		mark {
+			background-color: white;
+		}
+
+		/* Slideshow container */
+		.slideshow-container {
+			position: relative;
+			max-width: 80%;
+			margin: auto;
+			overflow: hidden;
+			border: 1px solid #ddd; /* Add border for visual separation */
+			border-radius: 10px; /* Round the corners */
+		}
+
+		/* Slides */
+		.mySlides {
+			display: none;
+			width: 100%;
+		}
+
+		/* Navigation buttons */
+		.prev, .next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			padding: 16px;
+			color: white;
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+			border-radius: 3px;
+			user-select: none;
+			background-color: rgba(0,0,0,0.5); /* Add background color for better visibility */
+		}
+
+		/* Position the "next button" to the right */
+		.next {
+			right: 10px;
+		}
+
+		/* Position the "prev button" to the left */
+		.prev {
+			left: 10px;
+		}
+
+		/* Caption text */
+		.text {
+			color: #f2f2f2;
+			font-size: 15px;
+			padding: 8px 12px;
+			position: absolute;
+			bottom: 8px;
+			width: 100%;
+			text-align: center;
+		}
+
+		/* Number text (1/3 etc) */
+		.numbertext {
+			color: #f2f2f2;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+		}
+
+		/* Fading animation */
+		.fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+		}
+
+		@-webkit-keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+		}
+
+		@keyframes fade {
+			from {opacity: .4} 
+			to {opacity: 1}
+		}
+	</style>
+</head>
+<body>
+	<!-- Menu bar -->
+	<div class="menu-bar">
+		<a href="index.html">
+			<img src="picture/menu.png" style="width: 60px; height: 60px; padding: 10px;">
+		</a>
+	</div>
+
+	<header>
+		<b><h1 style="text-align: center;"> I AM ME!</h1></b>
+	</header>
+  
+	<nav class="navbar">
+		<ul>
+			<li><a href="thisisme.html">HOME</a></li>
+			<li><a href="gegsh.html">FAMILY</a></li>
+			<li><a href="song.html">TRACK</a></li>
+			<li><a href="picture.html">PICTURE</a></li>
+			<li><a href="likes.html">INFORMATION</a></li>
+			<li><a href="project.html">PROJECT</a></li>
+		</ul>
+	</nav>
+
+	<div class="main-content">
+		<div class="slideshow-container">
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!-- Prev button placed outside slides -->
+			<div class="mySlides fade" onclick="openLink(1)">
+				<div class="numbertext">1 / 4</div>
+				<img src="FInal!stSem\bsys.png" style="width:100%; height: 500px; object-fit: cover;">
+				<div class="text">Final 1st Sem (BANKING SYSTEM)</div>
+			</div>
+
+			<div class="mySlides fade" onclick="openLink(2)">
+				<div class="numbertext">2 / 4</div>
+				<img src="PrelimButtonPic\esh.png" style="width:100%; height: 500px; object-fit: cover;">
+				<div class="text">OOP Prelim</div>
+			</div>
+
+			<div class="mySlides fade" onclick="openLink(3)">
+				<div class="numbertext">3 / 4</div>
+				<img src="MidtermPic\ey.png" style="width:100%; height: 500px; object-fit: cover;">
+				<div class="text">Midterm</div>
+			</div>
+			
+			<div class="mySlides fade" onclick="openLink(4)">
+				<div class="numbertext">4 / 4</div>
+				<img src="finalcover.png" style="width:100%; height: 500px; object-fit: cover;">
+				<div class="text">Finals (Capsphere)</div>
+			</div>
+			
+			<a class="next" onclick="plusSlides(1)">&#10095;</a> <!-- Next button placed outside slides -->
+		</div>
+	</div>
+
+	<script>
+		let slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function showSlides(n) {
+			let i;
+			let slides = document.getElementsByClassName("mySlides");
+			if (n > slides.length) {slideIndex = 1}    
+			if (n < 1) {slideIndex = slides.length}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			}
+			slides[slideIndex-1].style.display = "block";  
+		}
+
+		setInterval(() => {
+			plusSlides(1);
+		}, 8000); // Change image every 8 seconds
+
+		function openLink(index) {
+			let url = "";
+			switch(index) {
+				case 1:
+					url = "https://drive.google.com/file/d/1ZaJNp_k33P94kZQyrhFRQATJXSR3umm2/view?usp=sharing";
+					break;
+				case 2:
+					url = "https://drive.google.com/drive/folders/1yLWG6M-_0HpoIveYDy2dU85fwNEn72dt?usp=drive_link";
+					break;
+				case 3:
+					url = "https://drive.google.com/drive/folders/1z9x9yAp5ytDpnKOModKkRZac1wakHFFy?usp=drive_link";
+					break;
+				case 4:
+					url = "https://drive.google.com/drive/folders/1NE4KMzLYOj_3jpp7xVKzzcHYtqcS4nUh?usp=sharing";
+					break;
+				default:
+					url = "#";
+					break;
+			}
+			window.location.href = url;
+		}
+	</script>
+</body>
+</html>
